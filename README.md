@@ -48,12 +48,34 @@ Model Waveform
 <img width="703" height="679" alt="image" src="https://github.com/user-attachments/assets/e7c7c7f8-ccf2-41ac-b1f3-325989941a6f" />
 
 Program
+```
+Am=7.15;
+fm=1376;
+Ac=10.725;
+fc=13760;
+fs=137600;
+t=0:1/fs:2/fm;
+em=Am*cos(2*3.14*fm*t);
+subplot(3,1,1);
+plot(t,em)
+ec=Ac*cos(2*3.14*fc*t);
+subplot(3,1,2);
+plot(t,ec)
+eAM1=(Ac+em).*cos(2*3.14*fc*t);
+eAM2=(Ac-em).*cos(2*3.14*fc*t);
+eDSBSC=eAM1-eAM2
+subplot(3,1,3);
+plot(t,eDSBSC)
+
+```
 
 Output Graph
 
+<img width="1918" height="1112" alt="Screenshot 2026-05-21 092139" src="https://github.com/user-attachments/assets/cd0d2389-8f51-4df9-a36a-b654e1ffb01c" />
 
 Tablular Column
 
+<img width="1280" height="753" alt="WhatsApp Image 2026-05-21 at 9 24 58 AM" src="https://github.com/user-attachments/assets/b9c66c6d-8ea3-41c0-94d1-98288dbcf0e8" />
 
 Result
 
